@@ -1,17 +1,18 @@
 class ChildWelfareCase
   attr_reader :minor, :minor_id
 
-  def initialize(minor_name, id, address)
-    @address = address
-    @minor = minor_name
-    @minor_id = id
+  def initialize(minor, minor_id, total_address)
+    @minor = minor
+    @minor_id = minor_id
+    @total_address = total_address
   end
 
   def zip
-    @address.split(" ").last.to_i
+    zip_string = @total_address.split(" ")[-1]
+    zip_string.to_i
   end
 
   def address
-    @address.split(", ").first
+    @total_address.split(", ")[1]
   end
 end

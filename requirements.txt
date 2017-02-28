@@ -1,0 +1,53 @@
+# 1701 Mid-Module Assessment
+Child Welfare Case Management
+
+## ITERATION 1 (tests provided)
+```ruby
+social_worker = SocialWorker.new("Mariko Yamada", "Los Angeles")
+# => <#SocialWorker:943576874387>
+social_worker.name
+# => "Mariko Yamada"
+social_worker.county
+# => "Los Angeles"
+social_worker.cases
+# => []
+social_worker.caseload
+# => 0
+```
+
+## ITERATION 2
+```ruby
+cwc_1 = ChildWelfareCase.new("Jane Doe", 78645863548, "8763 Alameda Street, Los Angeles, CA 90002")
+# => <#ChildWelfareCase:943576874387...>
+cwc_1.minor
+# => "Jane Doe"
+cwc_1.minor_id
+# => 786458635487
+cwc_1.zip
+# => 90002
+cwc_1.address
+# => "8763 Alameda Street"
+```
+
+## ITERATION 3
+```ruby
+social_worker.add_case(cwc_1)
+social_worker.cases.first
+# => <#ChildWelfareCase:943576874387...>
+social_worker.caseload
+# => 1
+cwc_2 = ChildWelfareCase.new("Juan Pérez", 876425873866, "4663 Hillview Avenue, Los Angeles, CA 91304")
+# => <#ChildWelfareCase:871365874659...>
+social_worker.add_case(cwc_2)
+social_worker.cases.last
+# => <#ChildWelfareCase:871365874659...>
+social_worker.caseload
+# => 2
+```
+
+## ITERATION 4
+```ruby
+social_worker.caseload_by_zip
+# => { 91304 => 1, 90002 => 1 }
+```
+1 Comment Collapse
